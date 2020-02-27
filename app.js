@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
 var home = require('./controllers/home');
+var reg = require('./controllers/reg');
+var modreg =require('./controllers/modreg');
 
 //var fileUplod = require('express-fileupload');
 
@@ -19,6 +21,9 @@ var app=express();
 app.set('view engine', 'ejs');
 
 app.use('/home', home);
+app.use('/reg',reg);
+
+app.use('/modreg',modreg);
 
 
 

@@ -8,7 +8,7 @@ router.get('/', function(req, res){
 
 });
 
-router.post('/signup', function(req, res){
+router.get('/signup', function(req, res){
 	
 		res.render('reg/index');
 
