@@ -10,13 +10,29 @@
 <a href="/catagory/game">game   </a>
 <a href="catagory/ebook">Ebook   </a>
 
-<a href="login/index">Login   </a>
+<a href="login/index">logout   </a>
+
+
+
 
 <a href="/reg">Signup</a>
 
 
 <h1>----------------------------------------------------------------------------------------------</h1>
 <br><br><br>
+	<table border="1">
+		
+	<% for(var i=0; i < contentlist.length; i++){ %>
+		<tr>
+			<td><%= contentlist %></td>
+			
+			<td>
+				<a href="/home/edit/<%= userlist[i].id %>">EDIT</a> | 
+				<a href="/edit">DELETE</a> 
+			</td>
+		</tr>
+	<%  } %>
+	</table>
 
 
 

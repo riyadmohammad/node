@@ -10,14 +10,14 @@ router.get('/', function(req, res){
 
 router.post('/', function(req, res){
 	
-		var muser = {
+		var adminuser = {
 			id: req.params.id,
 			username: req.body.username,
 			password: req.body.password,
 			type: req.body.type
 		};
 
-		userModel.minsert(user, function(status){
+		userModel.admininsert(user, function(status){
 			if(status){
 				res.redirect('/home');
 			}else{

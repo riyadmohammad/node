@@ -14,6 +14,17 @@ router.get('/signup', function(req, res){
 
 });
 
+router.get('', function(req, res){
+	
+		userModel.getAll(function(results){
+			if(results.length > 0){
+				res.render('home', {contentlist: results});
+			}else{
+				res.redirect('/home');
+			}
+		});
+});
+
 
 
 module.exports = router;

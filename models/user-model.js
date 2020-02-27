@@ -5,7 +5,7 @@ module.exports= {
 	minsert: function(muser, callback){
 		
 		var sql= "insert into modare valuses(?,?,?)";
-		db.execute(sql,[muser.username, muser.password]function(status){
+		db.execute(sql,[muser.username, muser.password],function(status){
 			
 			
 			if(status){
@@ -19,6 +19,8 @@ module.exports= {
 		
 		
 	}
+	
+	
 	
 	admininsert: function(muser, callback){
 		
@@ -34,19 +36,10 @@ module.exports= {
 			
 			
 		});
+	}
 		
 		
-		adminlogin: function(user, callback){
-		var sql ="SELECT * from admin where username=? and password=?";
-		db.getResults(sql, [user.username, user.password], function(results){
-
-			if(results.length > 0){
-				callback(true);
-			}else{
-				callback(false);
-			}
-		});
-	},
+		
 	
 	modlogin: function(user, callback){
 		var sql ="SELECT * from modare where username=? and password=?";
@@ -59,9 +52,39 @@ module.exports= {
 			}
 		});
 	},
+	
+	adminlogin: function(user, callback){
+		var sql ="SELECT * from admin where username=? and password=?";
+		db.getResults(sql, [user.username, user.password], function(results){
+
+			if(results.length > 0){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+	},
 		
 		
-	}
+	
+	
+	
+	
+	
+	getAll : function(callback){
+		var sql = "select * content user";
+		db.getResults(sql, null, function(results){
+			if(results.length > 0){
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
+	
+	
+	
+	
 	
 	
 	
