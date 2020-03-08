@@ -1,0 +1,46 @@
+
+<html>
+    <head></head>
+    <body>
+<h2> DASHBORD<h2> <p>                                <h2><a href="/addcont">ADD CON</a></h2></p><br><br>
+<hr><br>
+
+<a href="/view_mod">View Modarators </a></h2>
+
+<hr>
+<br>
+
+<table style="width:100%">
+<thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Categories</th>
+      <th>Sub Categories</th>
+      <th>Edite/delet</th>
+    </tr>
+</thead>
+<% for(var i=0; i < results.length; i++){ %>
+<tbody>
+    <form action="" method="post"> 
+    <tr>
+      <th><input type="text" name="id" value="<%= results[0].cid%>" readonly></th>
+      <th><input type="text" name="name" value="<%= results[0].file_name%>" ></th>
+      <th><input type="text" name="cat" value="<%= results[0].cat%>"></th>
+      <th><input type="text" name="subcat" value="<%= results[0].subcat%>"></th>
+      <th>
+        <input type="submit" value="edit" >
+        <a href="admindashbord/delete/<%= results[i].cid %>">Delete</a>
+        
+      
+    </th>
+</tr>
+</form>
+
+<%  } %>
+</tbody>
+   
+  </table> 
+
+  </body>
+  </html>

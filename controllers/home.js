@@ -1,30 +1,23 @@
 var express = require('express');
 var router = express.Router();
-//var userModel = require.main.require('./models/user-model');
+var userModel = require.main.require('./models/user-model');
 
-router.get('/', function(req, res){
+
+/*router.get('*', function(req, res, next){
+	if(req.cookies['email'] == null){
+		res.redirect('/login');
+	}else{
+		next();
+	}
+});*/
+
+
+router.get('/', function(req, res){	
 	
-		res.render('home/index');
-
-});
-
-router.get('/signup', function(req, res){
-	
-		res.render('reg/index');
-
-});
-
-router.get('', function(req, res){
-	
-		userModel.getAll(function(results){
-			if(results.length > 0){
-				res.render('home', {contentlist: results});
-			}else{
-				res.redirect('/home');
-			}
+		userModel.catInfo (function(results){
+			res.render('mod/dashbord.ejs', {results: results});
 		});
+	
 });
-
-
 
 module.exports = router;

@@ -1,0 +1,45 @@
+
+<html>
+    <head></head>
+    <body>
+<h2> DASHBORD<h2> <p>                                <h2><a href="/addcont">ADD CON</a></h2></p><br><br>
+<hr><br>
+
+
+<table style="width:100%">
+<thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Categories</th>
+      <th>Sub Categories</th>
+      <th>Edite/delet</th>
+    </tr>
+</thead>
+<% for(var i=0; i < results.length; i++){ %>
+<tbody>
+    <form action="" method="post"> 
+    <tr>
+      <th><%= results[0].cid%></th>
+      <th><%= results[0].file_name%></th>
+      <th><%= results[0].cat%></th>
+      <th><%= results[0].subcat%></th>
+      <th>
+        
+        
+      
+    </th>
+</tr>
+</form>
+
+<%  } %>
+</tbody>
+   
+  </table> 
+
+
+
+  
+
+  </body>
+  </html>
